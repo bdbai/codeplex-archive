@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{399905B9-EBA7-4A68-A8F9-FD5613FC3ED0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TagLoader</RootNamespace>
+    <AssemblyName>TagLoader</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TagLib\ByteVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\ByteVectorList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\CorruptFileException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\File.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\FileTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Genres.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\ICodec.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\ExtendedHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Footer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\FrameFactory.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\FrameHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\AttachedPictureFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\CommentsFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\GeneralEncapsulatedObjectFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\MusicCdIdentifierFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\PlayCountFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\PopularimeterFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\PrivateFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\RelativeVolumeFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\SynchronizedLyricsFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\TermsOfUseFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\TextIdentificationFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\UniqueFileIdentifierFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\UnknownFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Frames\UnsynchronisedLyricsFrame.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\FrameTypes.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Header.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\SynchData.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Id3v2\Tag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\ListBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Picture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Properties.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\ReadOnlyByteVector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\StringList.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\SupportedMimeType.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\Tag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TagLib\UnsupportedFormatException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

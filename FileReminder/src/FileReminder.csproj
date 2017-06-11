@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F4ED8E3-BAC0-42E3-9789-25AA30AD99AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FileReminder</RootNamespace>
+    <AssemblyName>FileReminder</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\ico32512.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\FileLocker.cs" />
+    <Compile Include="Classes\FileLockerManager.cs" />
+    <Compile Include="Controls\TransparentLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\HappyBirthdaySpeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HappyBirthdaySpeForm.Designer.cs">
+      <DependentUpon>HappyBirthdaySpeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PreferenceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PreferenceForm.Designer.cs">
+      <DependentUpon>PreferenceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Classes\Reminder.cs" />
+    <Compile Include="Forms\ReminderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReminderForm.Designer.cs">
+      <DependentUpon>ReminderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\ReminderLoader.cs" />
+    <Compile Include="Classes\Today.cs" />
+    <Compile Include="Forms\TodayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TodayForm.Designer.cs">
+      <DependentUpon>TodayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TodayReminderView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TodayReminderView.Designer.cs">
+      <DependentUpon>TodayReminderView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\HappyBirthdaySpeForm.resx">
+      <DependentUpon>HappyBirthdaySpeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PreferenceForm.resx">
+      <DependentUpon>PreferenceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Models\run.activitydiagram.layout" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\ReminderForm.resx">
+      <DependentUpon>ReminderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TodayForm.resx">
+      <DependentUpon>TodayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TodayReminderView.resx">
+      <DependentUpon>TodayReminderView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Models\core.psd" />
+    <None Include="Models\ModelDefinition\Models.uml" />
+    <None Include="Models\Models.modelproj" />
+    <None Include="Models\run.activitydiagram" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ico32512.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Models\core.png" />
+    <Content Include="Resources\0035253138-0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\bin\Debug\" />
+    <Folder Include="Models\obj\Debug\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

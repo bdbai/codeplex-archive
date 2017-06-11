@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<activityRootModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/SimpleShapesModel" dslVersion="1.0.0.0" Id="869f36e8-d820-4794-a52a-53722816a423" name="run" linkedPackageId="dec0ecfe-dc03-4ac3-9bc5-515e5458b63c" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/ActivityDesigner">
+  <ownedCommentsInternal>
+    <comment Id="151e2118-34d8-4808-a658-3f507b3af459">
+      <elementDefinition Id="7d5e009c-6802-4088-92ad-5f6959802567" />
+      <body>只有1个未读提醒</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="9ee11e26-9e07-49fb-a520-bd2f3f47ae2a" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="257b5531-ad4f-42f1-9d1d-0512c585a5d5">
+      <elementDefinition Id="cdc16c09-017d-4e89-8969-663e736f2717" />
+      <body>有多于1个未读提醒</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="9ee11e26-9e07-49fb-a520-bd2f3f47ae2a" LastKnownName="Decision1" />
+      </annotatedElements>
+    </comment>
+    <comment Id="27deb8de-50ab-4d5b-b798-b2fd523b8ccf">
+      <elementDefinition Id="d4e7c3cf-374a-4e8c-bef4-d866e87d2701" />
+      <body>是</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="f16b7dc4-5f71-4415-bc42-25aa2edd118a" LastKnownName="Decision2" />
+      </annotatedElements>
+    </comment>
+    <comment Id="679e945a-4f06-4364-acd2-4e813bb3cd0e">
+      <elementDefinition Id="d3b35f8e-d8de-45c1-8e3d-70498e8d52ff" />
+      <body>否</body>
+      <annotatedElements>
+        <decisionNodeMoniker Id="f16b7dc4-5f71-4415-bc42-25aa2edd118a" LastKnownName="Decision2" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <activityRootModelHasActivity>
+      <activity Id="69c5fa56-b1d4-4fcb-956b-9c75db7f22c6" name="run" isAbstract="false" isLeaf="false" isActiveClass="false" isReentrant="false" isReadOnly="false" isSingleExecution="false">
+        <elementDefinition Id="a69916f8-e39a-488d-9e61-cc2c2a30232d" />
+        <nodes>
+          <sendSignalAction Id="7ce32798-f052-45c7-9a0a-64fb1928f99c" name="run 参数" isLeaf="false">
+            <elementDefinition Id="167d8b44-9c70-4a59-89ba-1fa61bcee393" />
+            <flowNodeTargets>
+              <controlFlow Id="70291ea4-39ac-4579-9480-33364747a0d4" isLeaf="false">
+                <opaqueActionMoniker Id="4d56127a-010f-43f9-a7e1-9cb3ba65f435" LastKnownName="开始主循环进程&#xD;&#xA;（runCore方法）" />
+                <elementDefinition Id="846e7f0e-cd9e-4f80-ba7b-1beaced50f28" />
+              </controlFlow>
+            </flowNodeTargets>
+          </sendSignalAction>
+          <opaqueAction Id="4d56127a-010f-43f9-a7e1-9cb3ba65f435" name="开始主循环进程&#xD;&#xA;（runCore方法）" isLeaf="false">
+            <elementDefinition Id="09a6d69f-030c-4bd7-8d22-5809eda97071" />
+            <flowNodeTargets>
+              <controlFlow Id="5313b735-1bcd-4eb5-b949-869bb6115769" isLeaf="false">
+                <opaqueActionMoniker Id="90a3336c-0d31-4f2a-aa2a-b28fe205c184" LastKnownName="锁定全部提醒&#xD;&#xA;解锁今日提醒" />
+                <elementDefinition Id="d017814c-b99f-49e6-828d-1080287df3ef" />
+              </controlFlow>
+              <controlFlow Id="1224c1a8-c48a-4c8a-9b5f-4ae47de0197f" isLeaf="false">
+                <opaqueActionMoniker Id="5d12f7be-31fe-4169-abff-0b9c7e2b3d2b" LastKnownName="创建并开始托盘图标和UI线程&#xD;&#xA;（iconWorker方法）" />
+                <elementDefinition Id="226b30bd-d0e5-4e26-b353-53acc094e0ff" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="bd5ffa6a-9008-4d19-95b9-9a0e965a54e0" name="获得今日未读提醒" isLeaf="false">
+            <elementDefinition Id="92cf0daa-dc7f-4061-8477-6d1350944f1b" />
+            <flowNodeTargets>
+              <controlFlow Id="9897c0e1-65da-4647-8c7e-70707403fcef" isLeaf="false">
+                <decisionNodeMoniker Id="9ee11e26-9e07-49fb-a520-bd2f3f47ae2a" LastKnownName="Decision1" />
+                <elementDefinition Id="01232326-8c84-42a8-8ee2-07671f7e05f3" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <decisionNode Id="9ee11e26-9e07-49fb-a520-bd2f3f47ae2a" name="Decision1" isLeaf="false">
+            <elementDefinition Id="dfd85221-1a97-4f9c-b241-dd11286f734c" />
+            <flowNodeTargets>
+              <controlFlow Id="f22a83ce-7a91-4ab2-a109-1efdfc92528b" isLeaf="false">
+                <opaqueActionMoniker Id="baccc8a5-95f1-403c-b51c-995ed3b1f109" LastKnownName="打开该提醒对应的文件" />
+                <elementDefinition Id="281c043b-e2a2-467c-b570-78fd664089a3" />
+              </controlFlow>
+              <controlFlow Id="0e62b425-414f-4d9a-ba4e-2e61ab48029a" isLeaf="false">
+                <opaqueActionMoniker Id="f206bfc4-5f86-49cf-8fb4-cc3b0c7114b9" LastKnownName="打开“今日相关”界面" />
+                <elementDefinition Id="04962412-21db-466c-8eaf-ad953c7410ab" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <opaqueAction Id="baccc8a5-95f1-403c-b51c-995ed3b1f109" name="打开该提醒对应的文件" isLeaf="false">
+            <elementDefinition Id="f86e6ca5-2178-4919-bcb7-1caa2ca6b5b5" />
+            <flowNodeTargets>
+              <controlFlow Id="224caaa3-f28a-4f04-8702-65ad5d133d46" isLeaf="false">
+                <mergeNodeMoniker Id="db9ee3fe-280c-4769-8438-12592a79b626" LastKnownName="Merge1" />
+                <elementDefinition Id="8aaf0f4d-fbae-468c-9a1b-251b223f9a22" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="f206bfc4-5f86-49cf-8fb4-cc3b0c7114b9" name="打开“今日相关”界面" isLeaf="false">
+            <elementDefinition Id="e2c81f2d-4bc1-4557-ab2e-302f3b8aaffd" />
+            <flowNodeTargets>
+              <controlFlow Id="a2034639-c614-46a2-bf6b-1fae910dffb0" isLeaf="false">
+                <mergeNodeMoniker Id="db9ee3fe-280c-4769-8438-12592a79b626" LastKnownName="Merge1" />
+                <elementDefinition Id="b4d02512-c002-42a9-b946-fe4e4e8f6a62" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="feb1becb-66bb-456d-92df-1e6e10937847" name="挂起线程至第二天" isLeaf="false">
+            <elementDefinition Id="b0faefc5-7f67-4c9a-96fb-46f41c96e22b" />
+            <flowNodeTargets>
+              <controlFlow Id="431b6087-6485-473d-a662-5575ac9c4900" isLeaf="false">
+                <opaqueActionMoniker Id="90a3336c-0d31-4f2a-aa2a-b28fe205c184" LastKnownName="锁定全部提醒&#xD;&#xA;解锁今日提醒" />
+                <elementDefinition Id="d620801f-057b-4910-8f4c-b9b1db3865d4" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="90a3336c-0d31-4f2a-aa2a-b28fe205c184" name="锁定全部提醒&#xD;&#xA;解锁今日提醒" isLeaf="false">
+            <elementDefinition Id="72037cbc-9e1a-40f2-92c2-a81a36325cbf" />
+            <flowNodeTargets>
+              <controlFlow Id="e75618d9-d46e-47f0-993f-707d4de57535" isLeaf="false">
+                <opaqueActionMoniker Id="bd5ffa6a-9008-4d19-95b9-9a0e965a54e0" LastKnownName="获得今日未读提醒" />
+                <elementDefinition Id="984996d7-af3b-421d-a35b-4867d7687f6b" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="5d12f7be-31fe-4169-abff-0b9c7e2b3d2b" name="创建并开始托盘图标和UI线程&#xD;&#xA;（iconWorker方法）" isLeaf="false">
+            <elementDefinition Id="e0fba59d-b37d-4824-a176-516243328bd8" />
+            <flowNodeTargets>
+              <controlFlow Id="b2cbb0a3-b254-4ea0-9002-db397f8ba433" isLeaf="false">
+                <opaqueActionMoniker Id="323000e7-a47d-4f42-9e15-51e9d1cbbb16" LastKnownName="初始化托盘图标" />
+                <elementDefinition Id="7b6fb42a-71e5-45d6-8616-3f724e62a34f" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="323000e7-a47d-4f42-9e15-51e9d1cbbb16" name="初始化托盘图标" isLeaf="false">
+            <elementDefinition Id="e0710012-2ee7-4c40-a386-713c4e421e62" />
+            <flowNodeTargets>
+              <controlFlow Id="2f384b6c-a681-410f-8844-08079b6e799a" isLeaf="false">
+                <opaqueActionMoniker Id="a34ea43d-0e5e-4135-9d00-cad396f520e4" LastKnownName="开始消息循环" />
+                <elementDefinition Id="1f77bc74-8686-4c2c-898f-4ec66ade3b8d" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <opaqueAction Id="a34ea43d-0e5e-4135-9d00-cad396f520e4" name="开始消息循环" isLeaf="false">
+            <elementDefinition Id="7002bca7-0277-4a69-aeff-7077d8c7d29f" />
+            <flowNodeTargets>
+              <controlFlow Id="19032f5b-5696-47d5-850a-671efe5c750c" isLeaf="false">
+                <forkNodeMoniker Id="9d8f596b-93f0-4739-99d3-907b310f4832" LastKnownName="Fork1" />
+                <elementDefinition Id="f62038b0-7478-4e3b-9c28-e7fc3e7843fa" />
+              </controlFlow>
+            </flowNodeTargets>
+          </opaqueAction>
+          <mergeNode Id="db9ee3fe-280c-4769-8438-12592a79b626" name="Merge1" isLeaf="false">
+            <elementDefinition Id="862586a4-5071-4660-80a4-6794b4f7fdc3" />
+            <flowNodeTargets>
+              <controlFlow Id="2553b8a3-ab03-496e-8b7a-c3930c30904c" isLeaf="false">
+                <opaqueActionMoniker Id="feb1becb-66bb-456d-92df-1e6e10937847" LastKnownName="挂起线程至第二天" />
+                <elementDefinition Id="ac2e31d5-93ce-4a29-91c4-3f0091b95a9a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </mergeNode>
+          <forkNode Id="9d8f596b-93f0-4739-99d3-907b310f4832" name="Fork1" isLeaf="false">
+            <elementDefinition Id="cafd20f9-04d3-42dc-8c8d-a1a840543dc3" />
+            <objectFlowTargets>
+              <objectFlow Id="6cc81241-615f-4d57-8dd4-d22111d7c5e4" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="692b8897-d296-45df-b379-ce30f6436d31" LastKnownName="用户点击“今日事项”菜单项" />
+                <elementDefinition Id="389875d2-1ac4-46a5-b523-0494a39f4a02" />
+              </objectFlow>
+              <objectFlow Id="381f3462-2ad9-487f-8e86-1a4e3de17eed" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="beef9d29-2613-4a3c-8076-b7881ba1733f" LastKnownName="用户点击“设置”菜单项" />
+                <elementDefinition Id="5f379238-5b9b-459c-ac84-3c84ab2b4026" />
+              </objectFlow>
+              <objectFlow Id="c4a01db1-f419-4c8c-8da6-d0ca4ba32152" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="ddd7c8b7-899e-4617-8c7f-c4060aac1d5e" LastKnownName="用户点击“暂时退出”菜单项" />
+                <elementDefinition Id="b589c407-5fd7-4cdc-8976-1dc914259671" />
+              </objectFlow>
+              <objectFlow Id="c4ca9339-3a9a-4f19-93fe-94e42b53f193" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="9d70eaaa-6d5a-48b1-a8a9-2919390cd90a" LastKnownName="用户点击“停止FileReminder”菜单项 " />
+                <elementDefinition Id="99aa4022-0c57-482a-a447-caf85853fe5e" />
+              </objectFlow>
+              <objectFlow Id="fb7ddd8a-2a46-40c7-b238-4739ea74b008" isLeaf="false" isMulticast="false" isMultireceive="false">
+                <inputPinMoniker Id="a3f7f4e9-4d8b-4f1d-aeac-1f2077192925" LastKnownName="用户关机" />
+                <elementDefinition Id="4c489499-c40d-48e6-a21a-7ddd3341cd6d" />
+              </objectFlow>
+            </objectFlowTargets>
+          </forkNode>
+          <opaqueAction Id="ef5a0e3b-7309-431b-b95c-38b12ef10611" name="显示“今日事项”界面" isLeaf="false">
+            <elementDefinition Id="10617b1e-e194-484f-97be-467b6204d7e5" />
+            <flowNodeTargets>
+              <controlFlow Id="aef93776-002b-4e2f-bfd2-b2baa3a28bb1" isLeaf="false">
+                <joinNodeMoniker Id="a3366aa5-aa66-4bd3-b79f-68b2f0ec1a81" LastKnownName="Join1" />
+                <elementDefinition Id="f63ba31d-0729-44ec-af49-f5e4c16bfb30" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="692b8897-d296-45df-b379-ce30f6436d31" name="用户点击“今日事项”菜单项" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="03f58f36-6281-418a-9f86-16a118132e48" />
+                  <upperBound>
+                    <literalInteger Id="7b50ef35-de63-4aeb-be03-10108cdbe127" name="2147483647" value="2147483647">
+                      <elementDefinition Id="757dc9d7-deee-45a5-a025-cb7595c70d4f" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="797e1db2-fb6d-41c7-b865-aebfcc60902a" name="显示“设置”界面" isLeaf="false">
+            <elementDefinition Id="269a6095-daf6-4125-8cd8-f86409ede455" />
+            <flowNodeTargets>
+              <controlFlow Id="4d6837d3-b4c9-4742-8a74-7eed428d6930" isLeaf="false">
+                <joinNodeMoniker Id="a3366aa5-aa66-4bd3-b79f-68b2f0ec1a81" LastKnownName="Join1" />
+                <elementDefinition Id="936f1408-dc90-462a-a9c5-c3a3c51abc02" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="beef9d29-2613-4a3c-8076-b7881ba1733f" name="用户点击“设置”菜单项" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="266e151b-f535-49ff-abbb-310fd3bef4f9" />
+                  <upperBound>
+                    <literalInteger Id="0f1a9dc4-b574-4f33-b8c1-8377bbd3ee8b" name="2147483647" value="2147483647">
+                      <elementDefinition Id="45c1fd72-18dc-4f47-b9d5-684ae11da6a8" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
+          </opaqueAction>
+          <opaqueAction Id="a0a77c34-da49-4eba-a80c-83aa8bac01c2" name="退出程序" isLeaf="false">
+            <elementDefinition Id="ac5a66a9-a5f5-4101-b522-318b795dd9da" />
+            <flowNodeTargets>
+              <controlFlow Id="72e79810-bd53-493d-94cb-b7356111d065" isLeaf="false">
+                <activityFinalNodeMoniker Id="661267e9-74ab-44a0-841b-29d52d33e09c" LastKnownName="ActivityFinal1" />
+                <elementDefinition Id="98987483-dbfa-4c4e-b6ad-7d62747996e8" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="ddd7c8b7-899e-4617-8c7f-c4060aac1d5e" name="用户点击“暂时退出”菜单项" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="764b2d44-aa9d-4f76-886f-e729b1c7f275" />
+                  <upperBound>
+                    <literalInteger Id="b910d9f1-938f-4349-9bbe-2bc694e973fa" name="2147483647" value="2147483647">
+                      <elementDefinition Id="775d1b61-d604-48bf-961e-3076dd039a76" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+              <opaqueActionHasInputValues>
+                <inputPin Id="a3f7f4e9-4d8b-4f1d-aeac-1f2077192925" name="用户关机" isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="2abde156-b36d-44f3-91f8-9039070a4c24" />
+                  <upperBound>
+                    <literalInteger Id="f386c5c8-80dd-42be-b954-855458afb2cd" name="2147483647" value="2147483647">
+                      <elementDefinition Id="3bfd493f-5309-425b-8a58-0a29332b2f94" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
+          </opaqueAction>
+          <activityFinalNode Id="661267e9-74ab-44a0-841b-29d52d33e09c" name="ActivityFinal1" isLeaf="false">
+            <elementDefinition Id="f3ba8f69-5761-46ea-9db2-154214fb3c8a" />
+          </activityFinalNode>
+          <opaqueAction Id="577f82f9-2852-4505-9d13-ba52ba8c85a9" name="确认是否停止" isLeaf="false">
+            <elementDefinition Id="aa3c4b0f-08a6-426f-96a6-30bf460d25a5" />
+            <flowNodeTargets>
+              <controlFlow Id="5906d837-45e0-4942-83e7-0ed3ff40fb92" isLeaf="false">
+                <decisionNodeMoniker Id="f16b7dc4-5f71-4415-bc42-25aa2edd118a" LastKnownName="Decision2" />
+                <elementDefinition Id="e1b93d28-26c4-433a-866f-aaf670639c87" />
+              </controlFlow>
+            </flowNodeTargets>
+            <pins>
+              <opaqueActionHasInputValues>
+                <inputPin Id="9d70eaaa-6d5a-48b1-a8a9-2919390cd90a" name="用户点击“停止FileReminder”菜单项 " isLeaf="false" ordering="Unordered" isControlType="false" isControl="false">
+                  <elementDefinition Id="9957a08e-b4a5-47ab-b3d8-1b780ccdfa2b" />
+                  <upperBound>
+                    <literalInteger Id="018ec548-1d50-4bd4-8f59-a599f6da715b" name="2147483647" value="2147483647">
+                      <elementDefinition Id="8d3663f8-8bf2-49f3-9529-96ffcd2c6015" />
+                    </literalInteger>
+                  </upperBound>
+                </inputPin>
+              </opaqueActionHasInputValues>
+            </pins>
+          </opaqueAction>
+          <decisionNode Id="f16b7dc4-5f71-4415-bc42-25aa2edd118a" name="Decision2" isLeaf="false">
+            <elementDefinition Id="360a5b7a-9946-431e-aa94-3b749b6dc3d1" />
+            <flowNodeTargets>
+              <controlFlow Id="86d38200-f6cd-4765-995c-4a055127a606" isLeaf="false">
+                <activityFinalNodeMoniker Id="7e932c9e-3a4d-49dd-8014-2197373db876" LastKnownName="ActivityFinal2" />
+                <elementDefinition Id="7a41fddf-0760-4f63-b919-ef92970ce1e7" />
+              </controlFlow>
+              <controlFlow Id="ce56cd36-9024-47a2-a79e-e4493a17ea59" isLeaf="false">
+                <joinNodeMoniker Id="a3366aa5-aa66-4bd3-b79f-68b2f0ec1a81" LastKnownName="Join1" />
+                <elementDefinition Id="53d3906b-d28e-49c4-89d8-63cb6a485007" />
+              </controlFlow>
+            </flowNodeTargets>
+          </decisionNode>
+          <activityFinalNode Id="7e932c9e-3a4d-49dd-8014-2197373db876" name="ActivityFinal2" isLeaf="false">
+            <elementDefinition Id="ea1268bd-9352-4c6d-a0bd-8d7b73599762" />
+          </activityFinalNode>
+          <joinNode Id="a3366aa5-aa66-4bd3-b79f-68b2f0ec1a81" name="Join1" isLeaf="false">
+            <elementDefinition Id="6d5c0f9d-4c39-4c11-91f5-8dd0ce5c67fe" />
+            <flowNodeTargets>
+              <controlFlow Id="c4fd0a38-5b54-4673-a973-55b730101e14" isLeaf="false">
+                <opaqueActionMoniker Id="a34ea43d-0e5e-4135-9d00-cad396f520e4" LastKnownName="开始消息循环" />
+                <elementDefinition Id="f86b0262-5fed-445c-a2f8-1790c1b7a83a" />
+              </controlFlow>
+            </flowNodeTargets>
+          </joinNode>
+        </nodes>
+      </activity>
+    </activityRootModelHasActivity>
+  </packagedElements>
+  <package Id="dec0ecfe-dc03-4ac3-9bc5-515e5458b63c" name="Models">
+    <elementDefinition Id="72bc3810-f179-4c5a-9ff3-9b405ac66fda" />
+    <profileInstances>
+      <packageHasProfileInstances Id="62cfad2c-4a05-489e-a830-5a1cb6ae7898">
+        <profileInstance Id="bd023403-2f1e-4939-98e7-312ef9aa9baf" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="9a0ed1c3-bfc9-460e-9999-e4bc50957889">
+        <profileInstance Id="382dead3-223e-44ca-be93-1f927713a139" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</activityRootModel>
